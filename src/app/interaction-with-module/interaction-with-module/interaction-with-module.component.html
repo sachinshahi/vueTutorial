@@ -1,0 +1,270 @@
+<h1>Using VueJS to interact with the DOM</h1>
+<app-layout>
+  <div class="header">Module Introduction</div>
+  <div class="content"></div>
+</app-layout>
+
+<app-layout>
+  <div class="header">Understanding VueJS Templates</div>
+  <div class="content">
+    {{content.underStandVueJsTemplate.content}}
+  </div>
+</app-layout>
+
+<app-layout>
+  <div class="header">How the VueJS Template Syntax
+  and Instance Work Together</div>
+  <div class="content"><!--<div id="app">
+      <p>{{ title }}</p>
+      <p> {{sayHello()}}
+    </div>-->
+
+    <!--new Vue({
+    el: '#app',
+    data: {
+    title: 'Hello World!'
+    },
+    methods: {
+    sayHello: function() {
+    return 'Hello!';
+    }
+    }
+    })-->
+
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Accessing Data in the Vue Instance</div>
+  <div class="content">
+
+
+    <!--new Vue({
+    el: '#app',
+    data: {
+    title: 'Hello World!'
+    },
+    methods: {
+    sayHello: function() {
+    return title;
+    //does not work
+    // title property sits on object property data
+    }
+
+    sayHello: function() {
+    return this.title; //this does not refer to data object
+    }
+    }
+    })-->
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Binding to Attributes</div>
+  <div class="content">
+   {{content.bindToAttribute.content}}
+
+    When we click in the link:<br/>
+    file:///D:/vuejs/Starting-Code/Starting%20Code/%7B%7Blink%7D%7D <br/>
+    Your file was not found<br/>
+
+    We cannot use curly braces in any html element attribute. So this does not work
+
+    Use v-bind directive <br/>
+    <!--<a v-bind:href="link">Google</a>-->
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Understanding and Using Directives</div>
+  <div class="content">
+   v-bind:href="link"
+    v-bind is a directive
+    : is used to pass argument to directive.
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Disable Re-Rendering with v-once</div>
+  <div class="content">
+    {{content.renderingVonce.content}}
+    </div>
+</app-layout>
+
+
+
+<app-layout>
+  <div class="header">How to output Raw HTML</div>
+  <div class="content">
+    {{content.rawHtml.content}}
+  </div>
+</app-layout>
+
+
+
+<app-layout>
+  <div class="header">Optional: Assignment Starting Code</div>
+  <div class="content"></div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Time to Practice Outputting Data to Templates</div>
+  <div class="content"></div>
+</app-layout>
+
+
+
+<app-layout>
+  <div class="header">Listening to Events</div>
+  <div class="content">
+    {{content.listeningEvent.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Getting Event Data from the Event Object</div>
+  <div class="content">
+    {{content.passingEvent.content}}
+
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Passing your own Arguments with Events</div>
+  <div class="content">
+    {{content.passingOwnArgument.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Modifying an Event - with Event Modifiers</div>
+  <div class="content">
+    {{content.eventModifier.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Listening to Keyboard Events</div>
+  <div class="content">
+    {{content.keyBoardEvent.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Assignemtn 2: Time to Practice Events</div>
+  <div class="content">
+    <!--<input type="text" v-on:keydown.enter="value = $event.target.value">
+    <p>{‌{ value }}-->
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Writing JavaScript Code in the Templates</div>
+  <div class="content">
+    {{content.javascriptCodeInTemplate.content}}
+
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Using Two-Way-Binding</div>
+  <div class="content">
+    {{content.twoWayBinding.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Reacting to Changes with Computed Properties</div>
+  <div class="content">
+    {{content.reactingToComputedProperty.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">An Alternative to Computed Properties:Watching for Changes</div>
+  <div class="content">
+    Use computed whereEver Possible. This cache the content.It uses caches.
+    It is the optimal one to avoid unnecessary changes.
+    Computed property does not work for asynchronous tasks.
+    Computed property need synchronous task to run
+    {{content.watchingChanges.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Saving Time with Shorthands</div>
+  <div class="content">
+    {{content.shortHands.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Time to Pracitice Reactive Properties</div>
+  <div class="content"></div>
+</app-layout>
+
+
+
+<app-layout>
+  <div class="header">Dynamic Styling with CSS Classes-Basics</div>
+  <div class="content">
+    {{content.dynamicCss.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Dynamic Styling with CSS Classes Using Objects</div>
+  <div class="content">
+    {{content.dynamicCssWithObject.content}}
+  </div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Dynamic Styling with CSS Classes Using Names</div>
+  <div class="content"></div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Setting Styles Dynamically(without CSS Classes)</div>
+  <div class="content"></div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Styling Elements with the Array Syntax</div>
+  <div class="content"></div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Time to Practice - Styling</div>
+  <div class="content"></div>
+</app-layout>
+
+
+<app-layout>
+  <div class="header">Time t Practice - Styling</div>
+  <div class="content"></div>
+</app-layout>
+
+
+

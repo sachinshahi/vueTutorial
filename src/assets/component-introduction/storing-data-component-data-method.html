@@ -1,0 +1,78 @@
+Then problem with using data variable outside Vue.component
+var data = {status: 'Critical'}
+
+Example is shown below
+
+<html>
+<!-- Put this in the HTML section in JSFiddle! -->
+<head>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+  <my-cmp></my-cmp>
+  </hr>
+  <my-cmp></my-cmp>
+</div>
+<script>
+  var data = {status: 'Critical'}
+
+  Vue.component('my-cmp', {
+    data: function() {
+      return data;
+    },
+    template: '<p> Server Status: {{status}}(<button @click="changeStatus">Change</button>)</p>',
+    methods: {
+      changeStatus: function() {
+        this.status = 'Normal';
+      }
+    }
+
+  });
+
+  new Vue({
+    el: '#app'
+  })
+</script>
+</body>
+</html>
+
+
+Output:
+Server Status: Critical(Change)
+
+Server Status: Critical(Change)
+
+After click in Change
+Output:
+
+Server Status: Normal(Change)
+
+Server Status: Normal(Change)
+
+Data sis stored in memory. we have differnt point point to same data. we changed shared dat
+
+Fixed:
+<script>
+Vue.component('my-cmp', {
+data: function() {
+return {status: 'Critical'};
+},
+template: '<p> Server Status: {{status}}(<button @click="changeStatus">Change</button>)</p>',
+methods: {
+changeStatus: function() {
+this.status = 'Normal';
+}
+}
+
+});
+
+new Vue({
+el: '#app'
+})
+</script>
+
+Now we have two different object with separate data
+Now it is registered globally
+

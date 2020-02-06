@@ -1,0 +1,20 @@
+
+<!-- Put this in the HTML section in JSFiddle! -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p v-show="show">Do you also see me?</p>
+  <button @click="show = !show">Switch</button>
+</div>
+
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      show: true
+    }
+  });
+</script>
+Unlike v-if v-show does not remove element from DOM.
+It only hide element by add style = "display: none"

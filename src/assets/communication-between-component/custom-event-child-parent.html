@@ -1,0 +1,111 @@
+Pass by value
+It is fine to change props in child component when it is primitive type.
+Pass by reference
+If it is an array or object then it is reference type. They only exists in memory once.
+We are passing property reference to child component. If we change value then parent value will be also change when we change object
+-------------------------------
+<template>
+  <div class="component">
+    <h3>You may view the User Details here</h3>
+    <p>Many Details</p>
+    <p>User Name : {{switchName()}}</p>
+    <button @click="resetName">Reset Name</button>
+  </div>
+</template>
+
+<script>
+  export default  {
+    props: {
+      myName: {
+        type: String,
+        default: 'Max'
+
+      }
+    },
+    methods: {
+      switchName() {
+        return this.myName.split("").reverse().join("")
+      },
+      resetName() {
+        this.myName = 'Max';
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  div {
+    background-color: lightcoral;
+  }
+</style>
+
+User.vue
+<template>
+  <div class="component">
+    <h1>The User Component</h1>
+    <p>I'm an awesome User!</p>
+    <button @click="changeName">Change my Name</button>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <app-user-detail :myName="name"></app-user-detail>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <app-user-edit></app-user-edit>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import UserDetail from './UserDetail.vue';
+  import UserEdit from './UserEdit.vue';
+
+  export default {
+    data: function() {
+      return {
+        name: 'Max'
+      }
+    },
+    methods: {
+      changeName() {
+        this.name = 'Anna'
+      }
+    },
+    components: {
+      appUserDetail: UserDetail,
+      appUserEdit: UserEdit
+    }
+  }
+</script>
+
+<style scoped>
+  div {
+    background-color: lightblue;
+  }
+</style>
+
+
+Change my Name does not work when we do reset in child component after fist change my name.
+If we click change my name and reset and again click change my name it does not work.
+If we click reset and change my name it works. but if we click reset again, change my name does not work.
+
+Reason:
+When we click change my name, parent component name will be Anna.
+If we click reset in child componetn child name will be Max and parent name still will be Anna.
+Now we click change my name parent component name remain same Anna. Child componetn do not gets rendered.
+So we need to inform parent component to inform that value has changed.
+
+
+Each vueInstane has $emitMethod
+Component extends VueInstance
+UserDetail.vue
+resetName() {
+  this.myName = 'Max';
+  this.$emit('nameWasReset', this.myName);
+}
+nameWasReset-> name of the event
+this.myName= data
+
+User.vue
+<app-user-detail :myName="name" @nameWasReset="name=$event"></app-user-detail>

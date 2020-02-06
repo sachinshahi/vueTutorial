@@ -1,0 +1,48 @@
+{
+  "content": [
+    {
+        "title": "Conditional Rendering with v-if",
+        "content": "v-if.html"
+    },
+    {
+      "title": "v-else-if in Vue.js 2.1",
+      "content": "v-else-if.html"
+    },
+    {
+      "title": "Using an Alternative v-if Syntax",
+      "content": "v-if-alternative.html"
+    },
+    {
+      "title": "Don't Detach it with v-show",
+      "content": "v-show.html"
+    },
+    {
+      "title": "Rendering Lists with v-for",
+      "content": "v-for.html"
+    },
+    {
+      "title": "Getting the Current Index",
+      "content": "current-index.html"
+    },
+    {
+      "title": "Using an Alternative v-for Syntax",
+      "content": "v-for-alternative.html"
+    },
+    {
+      "title": "Looping through Objects",
+      "content": "object-looping.html"
+    },
+    {
+      "title": "Looping through a list of Numbers",
+      "content": "list-looping.html"
+    },
+    {
+      "title": "Keeping Track of Elements when using v-for",
+      "content": "v-for-object-tracking.html"
+    },
+    {
+      "title": "Time to Practice-Conditionals and Lists",
+      "content": ""
+    }
+  ]
+}

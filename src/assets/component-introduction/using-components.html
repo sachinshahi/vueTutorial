@@ -1,0 +1,69 @@
+ServerStatus.vue
+
+<template>
+  <div>
+    <p>Server Status: {{status}}</p>
+    <hr>
+    <button @click="changeStatus">Change Status</button>
+  </div>
+</template>
+
+<script>
+  export default {
+    data: function () {
+      return {
+        status: 'Critical'
+      }
+    },
+    methods: {
+      changeStatus() {
+        this.status = 'Normal';
+      }
+    }
+  }
+</script>
+
+Home.vue
+<template>
+  <div>
+    <app-server-status v-for="server in 5">
+    </app-server-status>
+  </div>
+</template>
+
+<script>
+  import ServerStatus from './ServerStatus.vue'
+  export default {
+    components: {
+      'app-server-status' : ServerStatus //register componetn localy
+    }
+  }
+</script>
+
+App.vue
+<template>
+  <app-servers></app-servers>
+</template>
+
+<script>
+
+</script>
+
+<style lang="scss">
+</style>
+
+main.js
+import Vue from 'vue'
+import App from './App.vue'
+import Home from './Home.vue'
+
+Vue.component('app-servers', Home);
+new Vue({
+el: '#app',
+render: h => h(App)
+})
+
+
+
+
+

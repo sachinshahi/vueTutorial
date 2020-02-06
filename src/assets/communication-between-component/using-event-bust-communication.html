@@ -1,0 +1,25 @@
+Like Services in Angular 2
+main.js
+export const eventBus = new Vue(); // This statement should be before statement new Vue
+
+UserEdit.vue
+methods: {
+editAge() {
+this.userAge = 30
+//this.$emit('ageWasEdited', this.userAge)
+eventBus.$emit('ageWasEdited', this.userAge)
+}
+}
+
+UserDetail.vue
+
+export default  {
+created(){ // created lifecycle hook
+//this listener will be running when the component created
+eventBus.$on('ageWasEdited', (userAge) => {
+this.userAge = userAge
+});
+}
+}
+
+It will not change the age in User.vue

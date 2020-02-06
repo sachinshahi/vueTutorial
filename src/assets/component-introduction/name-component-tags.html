@@ -1,0 +1,29 @@
+1) we can use -
+ 'app-header'
+2) use camel case
+AppHeader
+when using camel case we can remove single quote
+
+
+<!--export default {
+components: {
+AppHeader : Header,
+}
+}-->
+This both wil work as Vuejs will generate - for camel case also
+<AppHeader></AppHeader>
+<app-header></app-header>
+
+
+Although we can use camel case for component selector it is preferred to use -
+
+
+export default {
+components: {
+Servers,
+}
+}
+
+ES-6 will generate key value pair and component selector will be
+<servers></servers>
+

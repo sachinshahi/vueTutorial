@@ -1,0 +1,20 @@
+
+<!-- Put this in the HTML section in JSFiddle! -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+  <template v-if="show">
+    <h1>Heading</h1>
+    <p>Inside a template</p>
+  </template>
+  <button @click="show = !show">Switch</button>
+</div>
+
+<script>
+new Vue({
+el: '#app',
+data: {
+show: true
+}
+});
+</script>

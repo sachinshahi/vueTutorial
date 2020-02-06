@@ -1,0 +1,88 @@
+To get current content of button.
+With vanilla js we can use queryseletor.
+With vuejs place ref key in button
+Ref is kind of key which is recognized by vue
+ref="myButton"
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app1">
+  <h1 ref="heading">{{ title }}</h1>
+  <button v-on:click="show" ref="myButton">Show Paragraph</button>
+  <p v-if="showParagraph">This is not always visible</p>
+</div>
+
+<div id="app2">
+  <h1 ref="heading">{{ title }}</h1>
+  <button @click="onChange">Change Something in Vue 1 </button>
+</div>
+
+var data = {
+title: 'The VueJS Instance',
+showParagraph: false
+}
+
+var vm1 = new Vue({
+el: '#app1',
+data: data,
+methods: {
+show: function() {
+this.showParagraph = true;
+this.updateTitle('The VueJS Instance (Updated)');
+console.log(this.$refs.myButton);
+this.$refs.myButton.innerText = 'Test';
+
+},
+updateTitle: function(title) {
+this.title = title;
+}
+},
+computed: {
+lowercaseTitle: function() {
+return this.title.toLowerCase();
+}
+},
+watch: {
+title: function(value) {
+alert('Title changed, new value: ' + value);
+}
+}
+});
+
+
+vm1.newProp = 'Now!'; //not able to create new property
+//can add property but not used in vue instance not reactive
+// it doesn not have getter and setter  like other proprty
+// we cand add property but it does not work as it work in data property
+console.log(vm1);
+
+//another way
+console.log(vm1.$data.title);
+console.log(vm1.$data === data ); //return true
+vm1.$refs.heading.innerText = 'Something else';
+// it changes the dom directly but may not sync with template.
+// if template rerender the heading may not be set with vanilla js
+
+setTimeout(function() {
+vm1.title= 'Changed by Timer';
+vm1.show();
+}, 3000)
+
+var vm2 = new Vue({
+el: '#app2',
+data: {
+title: 'The second Instance'
+},
+methods: {
+onChange: function() {
+vm1.title = 'Changed';
+}
+}
+})
+
+//you can mix vue js code with vanilaa js code
+
+
+
+Where to learn more about vue API
+vuejs.org/api

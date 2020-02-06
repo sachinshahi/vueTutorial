@@ -1,0 +1,10 @@
+<app-layout *ngFor="let content of advancedLayout">
+  <div class="header">
+    {{content.title}}
+  </div>
+  <div class="content">
+    {{content.content | async}}
+  </div>
+  <div [innerHtml]="content.content | async | sanitizeHtml">
+  </div>
+</app-layout>

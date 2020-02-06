@@ -1,0 +1,34 @@
+vm1 = new Vue({
+el: '#app2',
+});
+
+Another way
+vm1 = new Vue({
+});
+
+vm1.$mount('#app1');
+// This mount is used when we don't know the element #app1
+
+///////////////////////////////////////////////////////////
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<div id="app3">
+</div>
+
+var vm3= new Vue({
+template: '<h1> Hello! </h1>'
+});
+
+vm3.$mount('#app3')
+
+///////////////////////////////////////////////////////
+
+<div id="app4">
+</div>
+
+
+var vm4= new Vue({
+template: '<h1> Hello! </h1>'
+});
+
+vm4.$mount();
+document.getElementById('app4').appendChild(vm4.$el);)

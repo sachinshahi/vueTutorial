@@ -1,0 +1,101 @@
+<html>
+<!-- Put this in the HTML section in JSFiddle! -->
+<head>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+</div>
+</hr>
+<div id="app">
+</div>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      status: 'Critical'
+    },
+    template: '<p> Server Status: {{status}} </p>'
+  })
+</script>
+</body>
+</html>
+
+Output: Server Status: Critical
+We are using Vue Instance and it will select only first element.
+After all, we only do have one vue instance.
+Component extends the Vue instance
+
+Vue.component('my-app');
+it will give new instance with some extra feature.
+fist argument is tag name. use prefix in tag name as like package in java
+second argument is Vue Instance
+
+<html>
+<!-- Put this in the HTML section in JSFiddle! -->
+<head>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+  <my-cmp></my-cmp>
+</div>
+</hr>
+<script>
+  Vue.component('my-cmp', {
+    data: {
+      status: 'Critical'
+    },
+    template: '<p> Server Status: {{status}} </p>'
+
+  });
+
+  new Vue({
+    el: '#app'
+  })
+</script>
+</body>
+</html>
+
+
+This will not work because data is object. we are interfering with data.
+It is fine to use data as a object in Vue Instance.
+In component data should be function return object
+
+
+<html>
+<!-- Put this in the HTML section in JSFiddle! -->
+<head>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+  <my-cmp></my-cmp>
+  </hr>
+  <my-cpm></my-cpm>
+</div>
+<script >
+  // Put this in the script section in JSFiddle
+  // In a local setup, you need to merge this and the index.html file into one file
+
+  Vue.component('my-cmp', {
+    data: function() {
+      return {
+        status: 'Critical'
+      }
+    },
+    template: '<p> Server Status: {{status}} </p>'
+
+  });
+
+  new Vue({
+    el: '#app'
+  })
+</script>
+</body>
+</html>
+
+

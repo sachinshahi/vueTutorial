@@ -1,0 +1,54 @@
+<template>
+  <h1>Hello World!</h1>
+</template>
+
+<script>
+  /*export default {
+  }*/ remove export default  will still work
+</script>
+
+<style lang="scss">
+</style>
+
+-------------------------
+App.vue
+<template>
+  <h1>Server Status: {{status}}</h1>
+</template>
+
+<script>
+  export default {
+    data: {
+      status: 'Critical'
+    }
+  }
+</script>
+
+<style lang="scss">
+</style>
+
+main.js
+new Vue({
+el: '#app',
+render: h => h(App)
+})
+
+Error:
+The "data" option should be a function that returns a per-instance value in component definitions
+-------------------------
+Fix: App.vue
+<template>
+  <h1>Server Status: {{status}}</h1>
+</template>
+
+<script>
+  export default {
+    data: function() {
+      return {status: 'Critical'}
+    }
+  }
+</script>
+
+<style lang="scss">
+</style>
+

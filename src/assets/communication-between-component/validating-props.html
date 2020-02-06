@@ -1,0 +1,83 @@
+Type of data using equal should be same
+If name is number then reverse type won't equal. If we pass number instead of string, application may break
+In order to this we need to validae props.
+<app-user-detail :myName="1"></app-user-detail>
+Error in render: "TypeError: this.myName.split is not a function
+
+For validating props should be object instead of Array
+props: {
+myName: String
+}
+
+props type can be multiple type
+props: {
+myName: [String, Array]
+}
+------------------------------------
+UserDetail.vue
+<template>
+  <div class="component">
+    <h3>You may view the User Details here</h3>
+    <p>Many Details</p>
+    <p>User Name : {{switchName()}}</p>
+  </div>
+</template>
+
+<script>
+  export default  {
+    props: {
+      myName: String
+    },
+    methods: {
+      switchName() {
+        return this.myName.split("").reverse().join("")
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  div {
+    background-color: lightcoral;
+  }
+</style>
+
+After this we will get warning instead of error at the development. It is also an error. By adding validatin we will get development time warning
+[Vue warn]: Invalid prop: type check failed for prop "myName". Expected String with value "1", got Number with value 1.
+------------------------------------------------------------------------------------------------------------
+
+props: {
+myName: {
+type: String,
+required: true
+}
+}
+
+This is the property which should be string and it is required
+Required will make this invalid
+<app-user-detail></app-user-detail>
+-------------------------------------------------------
+props: {
+myName: {
+type: String,
+default: 'Max'
+
+}
+}
+default will override required so it won't make sense to use required and default
+With default we can use like this
+<app-user-detail></app-user-detail>
+------------------------------------
+props with default object value
+
+props: {
+myName: {
+type: Object,
+default: function () {
+return  {
+name: 'Max'
+}
+}
+
+}
+}

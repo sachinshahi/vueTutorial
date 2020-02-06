@@ -1,0 +1,44 @@
+{
+  "content": [
+    {
+      "title": "An Introduction to Components",
+      "content": "introduction-to-component.html"
+    },
+    {
+      "title": "Storing Data in Components with the Data Method",
+      "content": "storing-data-component-data-method.html"
+    },
+    {
+      "title": "Registering Components locally and Globally",
+      "content": "registering-component-locally-globally.html"
+    },
+    {
+      "title": "The Root Component in the App.vue File",
+      "content": "root-component-in-vue.html"
+    },
+    {
+      "title": "Creating a Component",
+      "content": "creating-component.html"
+    },
+    {
+      "title": "Using a Component",
+      "content": "using-components.html"
+    },
+    {
+      "title": "Moving to a Better Folder Structure",
+      "content": "moving-better-folder-structure.html"
+    },
+    {
+      "title": "Alternative Folder Structure",
+      "content": "alternative-folder-structure.html"
+    },
+    {
+      "title": "How to Name your Component Tags(Selectors)",
+      "content": "name-component-tags.html"
+    },
+    {
+      "title": "Scoping Component Sytles",
+      "content": "scoping-component-styles.html"
+    }
+  ]
+}

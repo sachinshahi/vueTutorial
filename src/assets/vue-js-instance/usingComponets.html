@@ -1,0 +1,45 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<hello> </hello>
+<hello> </hello>
+<script>
+
+var vm3= new Vue({
+el: 'hello',
+template: '<h1> Hello! </h1>'
+});
+</script>
+
+// This will add hello to first hello tag only
+// output only one Hello!
+/////////////////////////////////////////////////////////
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div class="hello"></div>
+<div class="hello"> </div><script>
+
+  var vm3= new Vue({
+    el: '.hello',
+    template: '<h1> Hello! </h1>'
+  });
+</script>
+
+output: Only one Hello!
+
+///////////////////////////////////////////////////////
+Solution: Use Component
+Vue.component('hello', {
+template: '<h1> Hello! </h1>'
+});
+
+
+<div id="app2">
+  <h1 ref="heading">{{ title }}</h1>
+  <button @click="onChange">Change Something in Vue 1 </button>
+  <hello> </hello>
+  <hello> </hello>
+</div>
+
+
+Output two hello
+
+

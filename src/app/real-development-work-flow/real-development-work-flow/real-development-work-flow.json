@@ -1,0 +1,36 @@
+{
+  "content": [
+    {
+        "title": "Why do we need a Development Server",
+        "content": "needOfDevelopmentServer.html"
+    },
+    {
+      "title": "What does Development Workflow mean",
+      "content": "developmentWorkFlowMean.html"
+    },
+    {
+      "title": "Using the Vue CLI to create Projects",
+      "content": "vueCLIToCreateProjects.html"
+    },
+    {
+      "title": "Installing the Vue CLI and Creating a new Project",
+      "content": "vueCliCreatinganewProject.html"
+    },
+    {
+      "title": "An Overview over the Webpack Template Folder Structure",
+      "content": "overview-web-pack-template-folder.html"
+    },
+    {
+      "title": "Understanding .vue Files",
+      "content": "vunderstandingvueFiles.html"
+    },
+    {
+      "title": "Understanding the object in the Vue File",
+      "content": "understanding-object-vue-file.html"
+    },
+    {
+      "title": "How to Build your App for Production",
+      "content": "build-app-production.html"
+    }
+  ]
+}

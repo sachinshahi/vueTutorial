@@ -1,0 +1,68 @@
+Vue js will take the data property passed to Vue Constructor
+and use them as native property in vue instance.
+It also watch property and update dom based on property change
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app1">
+  <h1 ref="heading">{{ title }}</h1>
+  <button v-on:click="show">Show Paragraph</button>
+  <p v-if="showParagraph">This is not always visible</p>
+</div>
+
+<div id="app2">
+  <h1 ref="heading">{{ title }}</h1>
+  <button @click="onChange">Change Something in Vue 1 </button>
+</div>
+
+
+var vm1 = new Vue({
+el: '#app1',
+data: {
+title: 'The VueJS Instance',
+showParagraph: false
+},
+methods: {
+show: function() {
+this.showParagraph = true;
+this.updateTitle('The VueJS Instance (Updated)');
+},
+updateTitle: function(title) {
+this.title = title;
+}
+},
+computed: {
+lowercaseTitle: function() {
+return this.title.toLowerCase();
+}
+},
+watch: {
+title: function(value) {
+alert('Title changed, new value: ' + value);
+}
+}
+});
+
+
+vm1.newProp = 'Now!'; //not able to create new property
+//can add property but not used in vue instance not reactive
+// it doesn not have getter and setter  like other proprty
+// we cand add property but it does not work as it work in data property
+console.log(vm1);
+
+setTimeout(function() {
+vm1.title= 'Changed by Timer';
+vm1.show();
+}, 3000)
+
+var vm2 = new Vue({
+el: '#app2',
+data: {
+title: 'The second Instance'
+},
+methods: {
+onChange: function() {
+vm1.title = 'Changed';
+}
+}
+})

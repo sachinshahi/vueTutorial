@@ -1,0 +1,27 @@
+main.js
+export const eventBus = new Vue({
+methods: {
+changeAge(age) {
+this.$emit('ageWasEdited', age)
+}
+}
+});
+
+UserEdit.vue
+
+<script>
+  import {eventBus} from '../main'
+  export default {
+    props: ['userAge'],
+    methods: {
+      editAge() {
+        this.userAge = 30
+        //this.$emit('ageWasEdited', this.userAge)
+        //eventBus.$emit('ageWasEdited', this.userAge)
+        eventBus.changeAge(this.userAge);
+      }
+    }
+  }
+</script>
+
+With this it will works as before

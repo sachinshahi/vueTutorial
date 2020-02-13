@@ -1,0 +1,19 @@
+fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
+If we change this data in mixin what happens
+Eg:
+export const fruitMixin = {
+data() {
+return {
+fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
+filterText: ''
+}
+},
+};
+
+<button @click="fruits.push('Beeries')">Add New Item</button>
+
+
+If we add new Item in fruits in App.vue.
+It won't change the data of List.vue.
+Mixin data is not shared by component.
+If you need same instance then use javscript object.

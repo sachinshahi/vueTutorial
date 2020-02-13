@@ -1,0 +1,21 @@
+A global mixin is added to every instance and every component. Hence
+we rarely used it.
+
+Vue.mixin({
+created() {
+console.log('Global Mixin - Created Hook');
+}
+});
+
+Output:-
+Global Mixin - Created Hook // new Vue({) Main.js
+Global Mixin - Created Hook // App.vue
+Created // App.vue from fruitMixin created() {console.log('Created');}
+Global Mixin - Created Hook // List.vue
+Created // List.vue from fruitMix created()
+Inside List created Hook // created() lifecycle hook of List.vue
+
+Order of execution
+Global Mixin
+Local Mixin
+LifeCycle hook of component

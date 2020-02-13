@@ -1,0 +1,33 @@
+Is the component recreated or we use the existing instance.
+New.vue
+<template>
+  <div>
+    <h3> New Quote</h3>
+    <button @click="counter++">Increase</button>
+    <p>{{counter}}</p>
+  </div>
+</template>
+
+<script>
+  export default {
+    data: function () {
+      return {
+        counter: 0
+      }
+    },
+    created() {
+      console.log('created');
+    },
+    destroyed() {
+      console.log('destroyed');
+    }
+  }
+</script>
+
+<style scoped>
+</style>
+
+
+Output: O Always when we switch component
+Component is destroyed and recreated when we switch componet i.e component dies
+But we can override this behaviour

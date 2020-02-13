@@ -1,0 +1,38 @@
+Filter
+it helps to transform output in template
+
+Filter can also be registered locally and globally.
+You can register filter globally in main.js
+Vue.filter('to-lowercase');
+
+App.vue
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <h1>Filters & Mixins</h1>
+        <p>{{text | toUpperCase}}</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return  {
+        text: 'Hello there!'
+      }
+    },
+    filters: {
+      toUpperCase(value) {
+        return value.toUpperCase();
+      }
+    }
+  }
+</script>
+
+<style>
+
+</style>
+

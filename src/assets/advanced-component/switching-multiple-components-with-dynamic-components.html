@@ -1,0 +1,126 @@
+Dynamic Component
+
+App.vue
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <button @click="selectedComponent = 'appQuote'">Quote</button>
+        <button @click="selectedComponent='appAuthor'">Author</button>
+        <button @click="selectedComponent = 'appNew'">New</button>
+        <hr/>
+        {{selectedComponent}}
+        <component :is="selectedComponent">
+          <h2 slot="title">{{quoteTitle}}</h2>
+          <p>A wonderful Quote</p>
+        </component> <!--Dynamic component-->
+        <!--<app-quote>
+           <h2 slot="title">{{quoteTitle}}</h2>
+           <p>A wonderful Quote</p>
+       </app-quote>-->
+
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import Quote  from './components/Quote.vue';
+  import Author from './components/Author.vue';
+  import New from './components/New.vue';
+  export default {
+    data: function() {
+      return {
+        quoteTitle: 'The Quote',
+        selectedComponent: 'appQuote'
+      }
+    },
+    components: {
+      appQuote: Quote,
+      appAuthor: Author,
+      appNew: New
+    }
+  }
+</script>
+
+<style scoped>
+  h2 {
+    color: red
+  }
+</style>
+
+
+Quote.vue
+<template>
+  <div>
+    <div class="title">
+      <slot name="title"></slot>
+      <span style="color: #ccc;">
+                <slot name="subtitle">The Subtitle</slot> //introduce default content
+            </span>
+    </div>
+    <hr>
+    <div>
+      <slot></slot> // default slot
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+
+  }
+</script>
+
+<style scoped>
+  div {
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px black;
+    padding: auto;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  h2 {
+    color: red;
+  }
+
+  .title {
+    font-style: italic;
+  }
+</style>
+
+Author.vue
+
+<template>
+  <div>
+    <h3>The Author</h3>
+  </div>
+</template>
+
+<script>
+  export default {
+
+  }
+</script>
+
+<style scoped>
+
+</style>
+
+New.vue
+
+<template>
+  <div>
+    <h3> New Quote</h3>
+  </div>
+</template>
+
+<script>
+  export default {
+
+  }
+</script>
+
+<style scoped>
+</style>

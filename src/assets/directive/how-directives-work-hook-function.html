@@ -1,0 +1,25 @@
+Hooks
+5 different hooks in directive
+
+1) bind(el, binding, vnode)
+This is fire as soon as element is bind to directive
+el-> element in directive sits on
+binding -> refers to argument, modifier that is set up on directive
+vnode -> node in virtual dom
+
+binding and vnode should be readonly. This is controlled by vuejs
+
+2) inserted(el, binding, vnode)
+inserted el in dom then we can  style it
+
+3) updated(el, binding, vnode, oldVnode)
+called when the component is updated and children of the component has not been updated yet
+vnode and oldVnode should be treated as readonly
+
+4) componentUpdated(el, binding, vnode, oldVnode)
+called when component and children component is updated(everything is updated)
+
+5) unbind(el, binding, vnode)
+directive is removed
+
+bind and upate is used most

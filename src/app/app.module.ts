@@ -3,10 +3,12 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import { FiltersAndMixinsComponent } from './filters-and-mixins/filters-and-mixins/filters-and-mixins.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FiltersAndMixinsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,48 +1,52 @@
 {
   "content": [
     {
-        "title": "Conditional Rendering with v-if",
-        "content": "v-if.html"
+        "title": "Setting up the Module Project",
+        "content": "setting-up-module-project.html"
     },
     {
-      "title": "v-else-if in Vue.js 2.1",
-      "content": "v-else-if.html"
+      "title": "Passing Content - The Suboptimal Solution",
+      "content": "passing-content-suboptimal-solution.html"
     },
     {
-      "title": "Using an Alternative v-if Syntax",
-      "content": "v-if-alternative.html"
+      "title": "Passing Content with Slots",
+      "content": "passing-content-with-slot.html"
     },
     {
-      "title": "Don't Detach it with v-show",
-      "content": "v-show.html"
+      "title": "How Slot Content gets Compiled and Styled",
+      "content": "slot-content-gets-compiled-styled.html"
     },
     {
-      "title": "Rendering Lists with v-for",
-      "content": "v-for.html"
+      "title": "Changed Slot Sytling Behavior",
+      "content": "changed-slot-styling-behaviour.html"
     },
     {
-      "title": "Getting the Current Index",
-      "content": "current-index.html"
+      "title": "Using Multiple Slots (Named Slots)",
+      "content": "multiple-slots-named-slots.html"
     },
     {
-      "title": "Using an Alternative v-for Syntax",
-      "content": "v-for-alternative.html"
+      "title": "Default Slots and Slot Defaults",
+      "content": "default-slots-and-slot-default.html"
     },
     {
-      "title": "Looping through Objects",
-      "content": "object-looping.html"
+      "title": "A summary on Slots",
+      "content": "summary-on-slots.html"
     },
     {
-      "title": "Looping through a list of Numbers",
-      "content": "list-looping.html"
+      "title": "Switching Multiple Components with Dynamic Components",
+      "content": "switching-multiple-components-with-dynamic-components.html"
     },
     {
-      "title": "Keeping Track of Elements when using v-for",
-      "content": "v-for-object-tracking.html"
+      "title": "Understanding Dynamic Component Behavior",
+      "content": "understanding-dynamic-component-behaviour.html"
     },
     {
-      "title": "Time to Practice-Conditionals and Lists",
-      "content": ""
+      "title": "Keeping Dynamic Components Alive",
+      "content": "keeping-dynamic-component-behaviour.html"
+    },
+    {
+      "title": "Dynamic Components LiefCycle Hooks ",
+      "content": "dynamic-component-lifecycle.html"
     }
   ]
 }

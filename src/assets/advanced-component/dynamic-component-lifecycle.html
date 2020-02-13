@@ -1,0 +1,37 @@
+We have two lifecycle hooks that we can listen when dynamic components get visited
+
+1) deactivated
+2) Activated
+
+<template>
+  <div>
+    <h3> New Quote</h3>
+    <button @click="counter++">Increase</button>
+    <p>{{counter}}</p>
+  </div>
+</template>
+
+<script>
+  export default {
+    data: function () {
+      return {
+        counter: 0
+      }
+    },
+    created() {
+      console.log('created');
+    },
+    destroyed() {
+      console.log('destroyed');
+    },
+    deactivated() {
+      console.log('Deactivated');
+    },
+    activated() {
+      console.log('Activated');
+    }
+  }
+</script>
+
+<style scoped>
+</style>

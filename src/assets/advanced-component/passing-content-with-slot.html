@@ -1,0 +1,49 @@
+Quote.vue
+<template>
+  <div>
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+  export default {
+
+  }
+</script>
+
+<style scoped>
+  div {
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px black;
+    padding: auto;
+    margin: 30px auto;
+    text-align: center;
+  }
+</style>
+
+App.vue
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-quote>
+          <h2>The wondeful Quote</h2>
+          <p>A wonderful Quote</p>
+        </app-quote>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import Quote  from './components/Quote.vue'
+  export default {
+    components: {
+      appQuote: Quote
+    }
+  }
+</script>
+
+<style>
+</style>
+

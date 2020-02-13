@@ -1,0 +1,66 @@
+Computed properties
+Array of fruits
+
+<input v-model="filterText">
+<ul>
+  <li v-for="fruit in fruits">
+    {{fruit}}
+  </li>
+</ul>
+
+we can use filter fruits | filter
+filter is supotimal
+not able to detect when it should run filter.
+Vuejs run filter upon each rerendering of the dom. it will have impact performance
+Even if we don't change the input it will rerender list.
+
+Solution
+We can use computed computed. Vuejs know what it property depends on and render the dom
+when dependent property changes.
+
+App.vue
+<template>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <h1>Filters & Mixins</h1>
+        <input v-model="filterText">
+        <ul>
+          <li v-for="fruit in filteredFruits">
+            {{fruit}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return  {
+        text: 'Hello there!',
+        fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
+        filterText: ''
+      }
+    },
+    filters: {
+      toUpperCase(value) {
+        return value.toUpperCase();
+      }
+    },
+    computed :{
+      filteredFruits() {
+        return this.fruits.filter((element) => {
+          return element.match(this.filterText);
+        });
+      }
+    }
+  }
+</script>
+
+<style>
+
+</style>
+
+

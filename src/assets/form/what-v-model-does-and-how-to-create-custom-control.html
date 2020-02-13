@@ -1,0 +1,31 @@
+v-model does two thing
+v-model = "userData.name"
+1) it bind value
+v-bind:value
+:value=userData.email
+2) input listener
+@input="userData.email" = $event.target.value
+------------------------------------
+Eg:
+
+
+<div class="form-group">
+  <label for="email">Mail</label>
+  <input
+    type="text"
+    id="email"
+    class="form-control"
+    v-model="userData.email">
+</div>
+
+Equivalent of v-model
+
+<div class="form-group">
+  <label for="email">Mail</label>
+  <input
+    type="text"
+    id="email"
+    class="form-control"
+    :value="userData.email"
+    @input="userData.email=$event.target.value">
+</div>
